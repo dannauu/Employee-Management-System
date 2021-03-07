@@ -29,7 +29,8 @@ function startApp() {
                 "Add Department?",
                 "Delete Employee",
                 "Delete Department",
-                "Delete Role"
+                "Delete Role",
+                "Quit"
               ]
         }
     ]).then((res) => {
@@ -73,6 +74,10 @@ function startApp() {
             case "Delete Role":
             deleteRole();
             break;
+
+            case "Quit":
+            quit();
+            break;
         }
     })
 }
@@ -82,7 +87,7 @@ function allEmployees() {
     connection.query('select * from employee', (err, res) => {
         if (err) throw err;
         console.table(res);
-        connection.end();
+        startApp();
     })
 }
 
@@ -91,7 +96,7 @@ function employeesByDept() {
     connection.query('select employee.firstName, employee.lastName, department.name AS Department FROM employee JOIN employeerole ON employee.roleid = employeerole.id JOIN department ON employeerole.departmentid = department.id ORDER BY department.name', (err, res) => {
         if (err) throw err;
         console.table(res);
-        connection.end();
+        startApp();
     })
 }
 
@@ -100,7 +105,7 @@ function employeesByRole() {
     connection.query('select employee.firstName, employee.lastName, employeerole.title AS Role FROM employee JOIN employeerole ON employee.roleid = employeerole.id', (err, res) => {
         if (err) throw err;
         console.table(res);
-        connection.end();
+        startApp();
     })
 }
 
@@ -208,7 +213,7 @@ function addDept() {
     ]).then((res) => {
         connection.query('insert into department set ?', [{Name: res.dept}], (err, res) => {
         console.table(res)
-        connection.end();
+        startApp();
         });
     })
     
@@ -218,7 +223,7 @@ function addDept() {
 function allRoles() {
     connection.query('select * from employeerole', (err, res) => {
         console.table(res);
-        connection.end();
+        startApp();
     })
 }
 
@@ -257,7 +262,7 @@ function deleteDept() {
 function allDept() {
     connection.query('select * from department', (err, res) => {
         console.table(res);
-        connection.end();
+        startApp();
     })
 }
 
@@ -274,6 +279,13 @@ function deleteRole() {
         })
     })
 }
+
+function quit() {
+    connection.end();
+    console.log('Thank you for using our CLI, have a nice day!')
+    process.exit();
+    
+  }
 
 
 startApp();

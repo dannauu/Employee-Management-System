@@ -10,7 +10,7 @@
 
 ## Description
 
-EMS or Employee Management System is a CLI that allows a company to manage their employees. The app uses MySQL as the database to hold all information about employees, departments, and more. The CLI allows the user to create, delete and manage their employees or departments and return the updated information in tables so it is easily readable.
+EMS or Employee Management System is a CLI that allows a company to manage their employees. The app uses MySQL as the database to hold all information about employees, departments, and also uses inquirer to prompt the user questions to fill out to pinpoint data. The CLI allows the user to create, delete and manage their employees or departments and return the updated information in tables so it is easily readable.
 
 ## Installation
 
