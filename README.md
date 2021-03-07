@@ -18,9 +18,7 @@ Clone the repository, and then run "npm i" in the terminal to install all necces
 
 ## Usage
 ### Application in use below
-![]()
-
-![]()
+![](https://github.com/dannauu/Employee-Management-System/blob/main/Assets/readmeGIF.gif)
 
 ## License
 
