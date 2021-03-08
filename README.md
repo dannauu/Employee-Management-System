@@ -5,6 +5,7 @@
 - [Description](#Description)
 - [Installation](#installation)
 - [Usage](#Usage)
+- [Video Tutorial](#Video-Tutorial)
 - [License](#License)
 - [Contribution](#Contribution)
 
@@ -21,7 +22,7 @@ Clone the repository, and then run "npm i" in the terminal to install all necces
 ![](https://github.com/dannauu/Employee-Management-System/blob/main/Assets/readmeGIF.gif)
 
 
-## Video Tutorial
+## Video-Tutorial
 [Video Tutorial](https://drive.google.com/file/d/1uJmDn9yeZcR5fT0JTKXQKj0kKuFcG48x/view)
 
 ## License
