@@ -213,10 +213,17 @@ function addDept() {
     ]).then((res) => {
         connection.query('insert into department set ?', [{Name: res.dept}], (err, res) => {
         console.table(res)
-        startApp();
+        allDept();
         });
     })
     
+}
+
+function allDept() {
+    connection.query('select * from department', (err, res) => {
+        console.table(res)
+        startApp();
+    })
 }
 
 // displays all roles after adding a role
